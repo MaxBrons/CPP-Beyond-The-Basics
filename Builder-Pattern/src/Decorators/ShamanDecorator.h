@@ -9,6 +9,6 @@ public:
 	~ShamanDecorator() = default;
 
 	std::string Execute() const override {
-		return NPCDecorator::Execute() + "| Attribute: Shaman\n";
+		return NPCDecorator::Execute() + " | Attribute: Shaman\n";
 	}
 };

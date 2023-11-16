@@ -9,6 +9,6 @@ public:
 	~BuilderDecorator() = default;
 
 	std::string Execute() const override {
-		return NPCDecorator::Execute() + "| Attribute: Builder\n";
+		return NPCDecorator::Execute() + " | Attribute: Builder\n";
 	}
 };

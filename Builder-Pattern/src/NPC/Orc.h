@@ -9,6 +9,6 @@ public:
 	~Orc() = default;
 
 	std::string Execute() const override {
-		return "| NAME: Orch\n";
+		return " | Name: Orch\n";
 	}
 };

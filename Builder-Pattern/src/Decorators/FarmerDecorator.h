@@ -9,6 +9,6 @@ public:
 	~FarmerDecorator() = default;
 
 	std::string Execute() const override {
-		return NPCDecorator::Execute() + "| Attribute: Farmer\n";
+		return NPCDecorator::Execute() + " | Attribute: Farmer\n";
 	}
 };

@@ -9,6 +9,6 @@ public:
 	~Elf() = default;
 
 	std::string Execute() const override {
-		return "| NAME: Elf\n";
+		return " | Name: Elf\n";
 	}
 };
