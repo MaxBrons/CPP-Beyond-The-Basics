@@ -18,3 +18,4 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Projects
 include "Bank-Account"
+include "Builder-Pattern"
