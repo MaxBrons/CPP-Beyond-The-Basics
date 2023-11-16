@@ -15,9 +15,6 @@ namespace BankAccount
 		}
 		~BankAccount() = default;
 
-		const std::string CreateHeader(const std::string& content) const;
-		const std::string CreateDetailsHeader(const std::string& content) const;
-
 		const std::string& GetAccountHolder() const { return m_AccountHolder; }
 		const float GetBalance() const { return m_Balance; }
 		const std::vector<Transaction>& GetTransactionHistory() const { return m_TransactionHistory; }

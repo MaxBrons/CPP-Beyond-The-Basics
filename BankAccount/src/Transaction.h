@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 namespace BankAccount
 {
@@ -24,6 +25,7 @@ namespace BankAccount
 
 		bool operator ==(const Transaction& right);
 		bool operator !=(const Transaction& right);
+		friend std::ostream& operator<<(std::ostream& os, const Transaction& transaction);
 	private:
 		std::string m_Source;
 		float m_Amount;
