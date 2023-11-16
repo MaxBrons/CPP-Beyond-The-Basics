@@ -13,6 +13,17 @@ project "BuilderPattern-Assembly"
 		"src/**.cpp"
 	}
 
+	includedirs
+	{
+		"src",
+		"../Core/src"
+	}
+
+	links
+	{
+		"Core"
+	}
+
 	filter "configurations:Debug"
 		defines "BTB_DEBUG"
 		runtime "Debug"

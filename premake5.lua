@@ -17,5 +17,6 @@ workspace "Beyond-The-Basics"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Projects
+include "Core"
 include "Bank-Account"
 include "Builder-Pattern"

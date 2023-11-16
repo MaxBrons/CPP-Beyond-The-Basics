@@ -1,5 +1,5 @@
-project "BankAccount-Assembly"
-	kind "ConsoleApp"
+project "Core"
+	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
 	staticruntime "off"
@@ -15,13 +15,7 @@ project "BankAccount-Assembly"
 
 	includedirs
 	{
-		"src",
-		"../Core/src"
-	}
-
-	links
-	{
-		"Core"
+		"src"
 	}
 
 	filter "configurations:Debug"
