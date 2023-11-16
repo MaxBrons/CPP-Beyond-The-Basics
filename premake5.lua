@@ -1,5 +1,5 @@
--- Beyond_The_Basics
-workspace "Beyond_The_Basics"
+-- Beyond-The-Basics
+workspace "Beyond-The-Basics"
 	architecture "x64"
 	startproject "BankAccount"
 
@@ -17,4 +17,4 @@ workspace "Beyond_The_Basics"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Projects
-include "BankAccount"
+include "Bank-Account"
