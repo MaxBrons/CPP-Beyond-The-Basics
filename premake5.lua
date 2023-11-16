@@ -18,5 +18,8 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Projects
 include "Core"
+
+group "Assignments"
 include "Bank-Account"
 include "Builder-Pattern"
+group ""
