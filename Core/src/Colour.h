@@ -1,9 +1,9 @@
 #pragma once
 #include <string>
 
-static class Colour {
+class Colour {
 public:
-	static class Foreground {
+	class Foreground {
 	public:
 		static const std::string Black;
 		static const std::string White;
@@ -14,7 +14,7 @@ public:
 		static const std::string Cyan;
 		static const std::string Purple;
 	};
-	static class Background {
+	class Background {
 	public:
 		static const std::string Black;
 		static const std::string White;

@@ -2,7 +2,7 @@
 #include "NPC/Orc.h"
 #include "NPC/Elf.h"
 
-static class NPCFactory 
+class NPCFactory 
 {
 public:
 	NPCFactory() = default;
