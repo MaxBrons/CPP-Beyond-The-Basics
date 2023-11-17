@@ -1,14 +1,17 @@
 #pragma once
 #include "NPC.h"
 
-// Return the orc name when the operation is excecuted.
-class Orc : public NPC
+namespace BuilderPattern
 {
-public:
-	Orc() = default;
-	~Orc() = default;
+	// Return the orc name when the operation is excecuted.
+	class Orc : public NPC
+	{
+	public:
+		Orc() = default;
+		~Orc() = default;
 
-	std::string Execute() const override {
-		return " | Name: Orch\n";
-	}
-};
+		std::string Execute() const override {
+			return " | Name: Orch\n";
+		}
+	};
+}

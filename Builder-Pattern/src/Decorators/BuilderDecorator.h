@@ -1,14 +1,17 @@
 #pragma once
 #include "../Decorators/NPCDecorator.h"
 
-// Add a builder attribute tag to the given NPC.
-class BuilderDecorator : public NPCDecorator
+namespace BuilderPattern
 {
-public:
-	BuilderDecorator(NPC* npc) : NPCDecorator(npc) {}
-	~BuilderDecorator() = default;
+	// Add a builder attribute tag to the given NPC.
+	class BuilderDecorator : public NPCDecorator
+	{
+	public:
+		BuilderDecorator(NPC* npc) : NPCDecorator(npc) {}
+		~BuilderDecorator() = default;
 
-	std::string Execute() const override {
-		return NPCDecorator::Execute() + " | Attribute: Builder\n";
-	}
-};
+		std::string Execute() const override {
+			return NPCDecorator::Execute() + " | Attribute: Builder\n";
+		}
+	};
+}

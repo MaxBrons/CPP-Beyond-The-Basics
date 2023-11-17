@@ -5,6 +5,8 @@
 
 #include <iostream>
 
+using namespace BuilderPattern;
+
 // This prints the npc's name and details to the screen.
 void print_npc_details(NPC* npc) {
 	std::cout << GUI::CreateHeader("| NPC DETAILS", Colour::Background::Blue) << std::endl << npc;
