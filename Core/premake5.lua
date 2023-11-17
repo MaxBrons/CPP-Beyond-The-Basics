@@ -7,6 +7,9 @@ project "Core"
 	targetdir ("../bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("../bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "btbpch.h"
+	pchsource "src/btbpch.cpp"
+
 	files
 	{
 		"src/**.h",

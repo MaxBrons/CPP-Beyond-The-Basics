@@ -1,6 +1,6 @@
 #include "BankAccount.h"
-#include "Colour.h"
-#include "GUI.h"
+
+#include <Core.h>
 
 #include <iomanip>
 

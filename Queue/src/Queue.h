@@ -1,5 +1,5 @@
 #pragma once
-#include "GUI.h"
+#include <Core.h>
 
 #include <iostream>
 #include <vector>

@@ -1,5 +1,6 @@
 #include "Transaction.h"
-#include "GUI.h"
+
+#include <Core.h>
 
 #include <iomanip>
 

@@ -1,7 +1,8 @@
 #include "NPC/Elf.h"
 #include "NPC/Orc.h"
 #include "NPCFactory.h"
-#include "GUI.h"
+
+#include <Core.h>
 
 #include <iostream>
 

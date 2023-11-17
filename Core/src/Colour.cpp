@@ -1,3 +1,4 @@
+#include "btbpch.h"
 #include "Colour.h"
 
 const std::string Colour::Default = "\033[0m";
