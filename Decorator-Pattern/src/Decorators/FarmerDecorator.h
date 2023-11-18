@@ -1,7 +1,7 @@
 #pragma once
 #include "../Decorators/NPCDecorator.h"
 
-namespace BuilderPattern
+namespace DecoratorPattern
 {
 	// Add a farmer attribute tag to the given NPC.
 	class FarmerDecorator : public NPCDecorator

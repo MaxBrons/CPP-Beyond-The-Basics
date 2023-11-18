@@ -1,4 +1,4 @@
-project "BuilderPattern-Assembly"
+project "DecoratorPattern-Assembly"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"

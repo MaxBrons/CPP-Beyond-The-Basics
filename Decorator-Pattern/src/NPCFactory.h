@@ -2,7 +2,7 @@
 #include "NPC/Orc.h"
 #include "NPC/Elf.h"
 
-namespace BuilderPattern
+namespace DecoratorPattern
 {
 	class NPCFactory
 	{

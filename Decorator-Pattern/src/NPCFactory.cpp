@@ -4,7 +4,7 @@
 #include "Decorators/BuilderDecorator.h"
 #include "Decorators/ShamanDecorator.h"
 
-namespace BuilderPattern
+namespace DecoratorPattern
 {
 	// Create an elf with the given attributes.
 	NPC* NPCFactory::CreateElf(bool hasFarmerAttrib, bool hasBuilderAttrib, bool hasShamanAttrib)

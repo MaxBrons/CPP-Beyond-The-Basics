@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-namespace BuilderPattern
+namespace DecoratorPattern
 {
 	// This is the base class for all the npc's.
 	// This simply prints the name and attributes 

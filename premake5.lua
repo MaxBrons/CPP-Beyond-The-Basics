@@ -21,6 +21,6 @@ include "Core"
 
 group "Assignments"
 include "Bank-Account"
-include "Builder-Pattern"
+include "Decorator-Pattern"
 include "Queue"
 group ""

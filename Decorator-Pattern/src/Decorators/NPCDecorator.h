@@ -1,7 +1,7 @@
 #pragma once
 #include "../NPC/NPC.h"
 
-namespace BuilderPattern
+namespace DecoratorPattern
 {
 	// This is a base class for all the npc decorator classes.
 	// This simply chains the execute method with the given npc.

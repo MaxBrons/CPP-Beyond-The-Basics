@@ -1,7 +1,7 @@
 #pragma once
 #include "NPC.h"
 
-namespace BuilderPattern
+namespace DecoratorPattern
 {
 	// Return the orc name when the operation is excecuted.
 	class Orc : public NPC
