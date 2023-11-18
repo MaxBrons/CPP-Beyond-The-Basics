@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <sstream>
 
 namespace Queue {
 	// This class is a header only queue that stores a vector of T's.
@@ -23,27 +25,36 @@ namespace Queue {
 			m_Queue.push_back(value);
 		}
 
-		// Retrieve the first item in the queue.
-		T View() const {
-			return *m_Queue.begin();
-		}
-
 		// Pop the first item in the queue.
 		T Dequeue() {
 			T queuedItem = *m_Queue.begin();
 			m_Queue.erase(m_Queue.begin());
 			return queuedItem;
+		} 
+
+		// Sort the queue based on the predicate.
+		template<typename P = std::less<T>>
+		void Sort(P predicate = std::less<T>()){
+			std::sort(m_Queue.begin(), m_Queue.end(), predicate);
 		}
 
-		typename std::vector<T>::iterator begin() { return m_Queue.begin(); }
-		typename std::vector<T>::iterator end() { return m_Queue.end(); }
+		// Retrieve the first item in the queue.
+		inline T View() const { return *m_Queue.begin(); }
+
+		// Return the size of the queue.
+		inline int Size() const { return m_Queue.size(); }
+
+		inline typename std::vector<T>::iterator begin() { return m_Queue.begin(); }
+		inline typename std::vector<T>::iterator end() { return m_Queue.end(); }
 
 		// Print the entire contents of the queue to the console.
 		friend std::ostream& operator <<(std::ostream& os, Queue<T>& queue) {
 			int i = 0;
 			for (auto it = queue.begin(); it != queue.end(); it++)
 			{
-				os << GUI::CreateHeader("Queue item " + std::to_string(i) + ": " + std::to_string(*it), 2) << std::endl;
+				std::ostringstream ss;
+				ss << "Queue item " << std::to_string(i) << ": " << *it;
+				os << GUI::CreateHeader(ss.str(), 2) << std::endl;
 				i++;
 			}
 			return os;
