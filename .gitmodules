@@ -1,0 +1,8 @@
+[submodule "GameOfLife/vendor/glfw"]
+	path = GameOfLife/vendor/glfw
+	url = https://github.com/glfw/glfw
+	ignore = all
+[submodule "GameOfLife/vendor/glm"]
+	path = GameOfLife/vendor/glm
+	url = https://github.com/g-truc/glm
+	ignore = all
