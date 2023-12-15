@@ -1,7 +1,6 @@
 #pragma once
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
-#include <vector>
+#include "Core.h"
+#include "Grid.h"
 
 class GameOfLife {
 public:
@@ -10,11 +9,9 @@ public:
 
 private:
     void Render();
+    int CountNeighbours(int x, int y);
 
 private:
-    std::vector<std::vector<bool>> m_Grid;
-    std::vector<std::vector<bool>> m_NextGrid;
-
-    void InitializeGrid();
-    int CountNeighbours(int x, int y);
+    std::unique_ptr<Grid<bool>> m_Grid;
+    std::unique_ptr<Grid<bool>> m_NextGrid;
 };

@@ -1,6 +1,8 @@
 #pragma once
 #include "Core.h"
 
+// These are the properties used to initialize and update 
+// the window properties of a GLFW window.
 struct WindowProperties
 {
 	std::string Title;
@@ -16,6 +18,7 @@ struct WindowProperties
 	}
 };
 
+// A base class for creating and managing a GLFW window.
 class Window
 {
 public:

@@ -6,26 +6,26 @@
 #include <chrono>
 #include <thread>
 
-const int WIDTH = 800;
-const int HEIGHT = 800;
+const int WINDOW_WIDTH = 800;
+const int WINDOW_HEIGHT = 800;
 
 int main() {
-    auto window = Window::Create({ "Conway's Game of Life", WIDTH, HEIGHT });
+    // Create an GLFW window with a name, width and height.
+    auto window = Window::Create({ "Conway's Game of Life", WINDOW_WIDTH, WINDOW_HEIGHT });
 
-    glViewport(0, 0, WIDTH, HEIGHT);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(0, WIDTH, 0, HEIGHT, -1, 1);
+    {
+        GameOfLife game;
 
-    GameOfLife game;
+        // Update the state of the Game Of Life and render 
+        // the new result to the screen after a set delay.
+        while (window->IsOpen())
+        {
+            game.OnUpdate();
 
-    while (window->IsOpen()) {
-        game.OnUpdate();
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
-        // Introduce a delay (adjust the milliseconds based on your preference)
-        std::this_thread::sleep_for(std::chrono::milliseconds(100));
-
-        window->OnUpdate();
+            window->OnUpdate();
+        }
     }
     return 0;
 }
