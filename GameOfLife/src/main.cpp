@@ -1,36 +1,31 @@
+#include "btbpch.h"
 #include "Core.h"
 #include "Window.h"
+#include "GameOfLife.h"
 
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <iostream>
+#include <chrono>
+#include <thread>
 
-static int s_Width = 720;
-static int s_Height = 720;
+const int WIDTH = 800;
+const int HEIGHT = 800;
 
-int main()
-{
-	auto window = Window::Create(WindowProperties("Game of life", s_Width, s_Height));
+int main() {
+    auto window = Window::Create({ "Conway's Game of Life", WIDTH, HEIGHT });
 
-	unsigned char* data = new unsigned char[s_Width * s_Height * 3];
+    glViewport(0, 0, WIDTH, HEIGHT);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glOrtho(0, WIDTH, 0, HEIGHT, -1, 1);
 
-	for (int i = 0; i < s_Width * s_Height; i++)
-	{
-		auto colour = rand() % 100 > 90 ? 0xff : 0x00;
-		data[i * 3] = colour;
-		data[i * 3 + 1] = colour;
-		data[i * 3 + 2] = colour;
-	}
+    GameOfLife game;
 
-	while (window->IsOpen())
-	{
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-		glDrawPixels(s_Width, s_Height, GL_RGB, GL_UNSIGNED_BYTE, data);
+    while (window->IsOpen()) {
+        game.OnUpdate();
 
-		window->OnUpdate();
-	}
+        // Introduce a delay (adjust the milliseconds based on your preference)
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
-	delete[] data;
-	return 0;
+        window->OnUpdate();
+    }
+    return 0;
 }

@@ -1,4 +1,57 @@
+#include "Core.h"
+
+#include <queue>
+#include <thread>
+#include <iostream>
+#include <condition_variable>
+
+int counter = 0;
+bool done = false;
+
+std::queue<int> goods;
+//std::unique_lock<std::mutex> m_lock;
+
+void producer() {
+    std::cout << "Starting producer..." << std::endl;
+    
+    //if (m_lock.try_lock()) {
+
+        for (int i = 0; i < 500; ++i) {
+            goods.push(i);
+            counter++;
+        }
+
+        done = true;
+        //m_lock.unlock();
+    //}
+
+
+    std::cout << "Finished producer..." << std::endl;
+}
+
+void consumer() {
+    std::cout << "Starting consumer..." << std::endl;
+
+    //if (m_lock.try_lock()) {
+        while (!done) {
+            while (!goods.empty()) {
+                goods.pop();
+                counter--;
+            }
+        }
+    //}
+
+    std::cout << "Finished consumer..." << std::endl;
+}
+
 
 int main() {
-	return 0;
+    counter = 0;
+    std::thread producerThread(producer);
+    std::thread consumerThread(consumer);
+
+    producerThread.join();
+    consumerThread.join();
+
+    std::cout << "Net: " << counter << " " << goods.size() << std::endl;
 }
