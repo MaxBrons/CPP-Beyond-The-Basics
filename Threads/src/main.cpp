@@ -107,9 +107,9 @@ int main()
     PrintLine();
 
     DisplaySubHeader("RESULTS");
-    PrintLine(GUI::CreateHeader("Produced goods: " + std::to_string(PRODUCER_GOODS_AMOUNT) + " | " + "Net should be 0.", 1));
-    PrintLine(GUI::CreateHeader("Net: " + std::to_string(m_Counter) + " | " + "Goods array size: " + std::to_string(m_Goods.size()), 1));
-    PrintLine(GUI::CreateHeader("Execution time: " + std::to_string(duration.count()) + " milliseconds", 1));
+    PrintLine(GUI::CreateHeader("Produced goods: " + std::to_string(PRODUCER_GOODS_AMOUNT) + " | " + "Net should be 0.", 2));
+    PrintLine(GUI::CreateHeader("Net: " + std::to_string(m_Counter) + " | " + "Goods array size: " + std::to_string(m_Goods.size()), 2));
+    PrintLine(GUI::CreateHeader("Execution time: " + std::to_string(duration.count()) + " milliseconds", 2));
 
     return 0;
 }
